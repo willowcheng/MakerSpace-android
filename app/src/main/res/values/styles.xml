@@ -8,7 +8,7 @@
     <!-- Navigation theme -->
     <style name="NavigationDrawerTheme" parent="MaterialNavigationDrawerTheme.Light.DarkActionBar">
         <item name="colorPrimary">@color/deep_carmine_pink</item>
-        <item name="colorPrimaryDark">@color/deep_carmine_pink</item>
+        <item name="colorPrimaryDark">@color/fire_engine_red</item>
         <item name="colorAccent">@color/sky_blue</item>
         <item name="singleAccount">true</item><!-- Remove the change account button -->
         <item name="rippleBackport">true</item>
