@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#FFFFFF</color>
+
     <color name="deep_carmine_pink">#F23A30</color>
     <color name="fire_engine_red">#CD292A</color>
     <color name="sky_blue">#75D9E7</color>

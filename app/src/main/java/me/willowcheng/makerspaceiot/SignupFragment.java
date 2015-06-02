@@ -14,10 +14,10 @@ import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AccountFragment extends Fragment {
+public class SignupFragment extends Fragment {
 
 
-    public AccountFragment() {
+    public SignupFragment() {
         // Required empty public constructor
     }
 
@@ -25,15 +25,8 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
-        Button signUpButton = (Button) rootView.findViewById(R.id.sign_up);
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(new SignupFragment(), "Sign up");
-            }
-        });
-        return rootView;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_signup, container, false);
     }
 
 
