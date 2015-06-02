@@ -1,18 +1,31 @@
 package me.willowcheng.makerspaceiot;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
+import it.neokree.materialnavigationdrawer.elements.MaterialAccount;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends MaterialNavigationDrawer {
+
+    private MaterialAccount account;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void init(Bundle savedInstanceState) {
+
+        // add accounts
+        account = new MaterialAccount(this.getResources(), "", "", null, R.mipmap.drawer_background);
+        this.addAccount(account);
+
+
+        // create sections
+        this.addSection(newSection(getResources().getString(R.string.home_fragment), R.mipmap.ic_account_grey600_48dp, new HomeFragment()).setSectionColor(getResources().getColor(R.color.deep_carmine_pink)));
+
+        disableLearningPattern();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
