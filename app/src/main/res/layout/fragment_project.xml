@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/parallax_image_height"
+                android:background="@drawable/header_background"
+                android:id="@+id/logo" />
+
+            <it.gmariotti.cardslib.library.view.CardViewNative
+                android:id="@+id/carddemo_largeimage1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card:card_layout_resourceID="@layout/native_material_largeimage_card"
+                style="@style/card_external"
+                />
+
+            <it.gmariotti.cardslib.library.view.CardViewNative
+                android:id="@+id/carddemo_largeimage2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card:card_layout_resourceID="@layout/native_material_largeimage_card"
+                style="@style/card_external"
+                />
+
+            <it.gmariotti.cardslib.library.view.CardViewNative
+                android:id="@+id/carddemo_largeimage3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card:card_layout_resourceID="@layout/native_material_largeimage_text_card"
+                style="@style/card_external"
+                />
+
+        </LinearLayout>
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+</LinearLayout>

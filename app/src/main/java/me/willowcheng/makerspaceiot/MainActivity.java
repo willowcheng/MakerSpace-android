@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.telly.mrvector.MrVector;
+
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialAccount;
 
@@ -16,13 +18,13 @@ public class MainActivity extends MaterialNavigationDrawer {
     public void init(Bundle savedInstanceState) {
 
         // add accounts
-        account = new MaterialAccount(this.getResources(), "", "", null, R.mipmap.drawer_background);
+        account = new MaterialAccount(this.getResources(), "", "", null, R.drawable.drawer_background);
         this.addAccount(account);
 
 
         // create sections
-        this.addSection(newSection(getResources().getString(R.string.home_fragment), R.mipmap.ic_android_studio_grey600_48dp, new HomeFragment()).setSectionColor(getResources().getColor(R.color.deep_carmine_pink)));
-        this.addSection(newSection(getResources().getString(R.string.account_fragment), R.mipmap.ic_account_grey600_48dp, new AccountFragment()).setSectionColor(getResources().getColor(R.color.sushi)));
+        this.addSection(newSection(getResources().getString(R.string.project_fragment), MrVector.inflate(getResources(), R.drawable.ic_project), new ProjectFragment()).setSectionColor(getResources().getColor(R.color.deep_carmine_pink)));
+        this.addSection(newSection(getResources().getString(R.string.account_fragment), MrVector.inflate(getResources(), R.drawable.ic_account), new AccountFragment()).setSectionColor(getResources().getColor(R.color.sushi)));
 
         disableLearningPattern();
     }

@@ -10,7 +10,7 @@
         <item name="colorPrimary">@color/deep_carmine_pink</item>
         <item name="colorPrimaryDark">@color/fire_engine_red</item>
         <item name="colorAccent">@color/sky_blue</item>
-        <item name="singleAccount">true</item><!-- Remove the change account button -->
+        <item name="singleAccount">true</item>
         <item name="rippleBackport">true</item>
         <item name="multipaneSupport">true</item>
     </style>

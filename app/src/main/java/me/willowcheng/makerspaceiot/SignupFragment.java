@@ -6,9 +6,6 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 
 
 /**

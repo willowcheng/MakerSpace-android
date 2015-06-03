@@ -3,8 +3,15 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="home_fragment">Home</string>
+    <string name="project_fragment">Project</string>
     <string name="account_fragment">Account</string>
+    
+    <string name="project_3d_modeling">3D Modeling</string>
+    <string name="project_virtual_reality">Virtual Reality</string>
+    <string name="project_bio_medical">Bio Medical</string>
+    <string name="project_wearables">Wearables</string>
+    <string name="project_iot">Internet of Things</string>
+    <string name="project_mobile">Mobile</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
