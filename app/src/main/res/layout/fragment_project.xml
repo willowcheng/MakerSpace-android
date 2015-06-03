@@ -18,14 +18,18 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/parallax_image_height"
-                android:background="@drawable/header_background"
+                android:background="@drawable/banner_makerspacerepo"
+                android:text="MakerSpaceRepo"
+                android:textSize="36sp"
+                android:textColor="@android:color/white"
+                android:gravity="center"
                 android:id="@+id/logo" />
 
             <it.gmariotti.cardslib.library.view.CardViewNative
-                android:id="@+id/carddemo_largeimage1"
+                android:id="@+id/card_iot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 card:card_layout_resourceID="@layout/native_material_largeimage_card"
@@ -33,7 +37,7 @@
                 />
 
             <it.gmariotti.cardslib.library.view.CardViewNative
-                android:id="@+id/carddemo_largeimage2"
+                android:id="@+id/card_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 card:card_layout_resourceID="@layout/native_material_largeimage_card"
@@ -41,7 +45,31 @@
                 />
 
             <it.gmariotti.cardslib.library.view.CardViewNative
-                android:id="@+id/carddemo_largeimage3"
+                android:id="@+id/card_biomedical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card:card_layout_resourceID="@layout/native_material_largeimage_card"
+                style="@style/card_external"
+                />
+
+            <it.gmariotti.cardslib.library.view.CardViewNative
+                android:id="@+id/card_3d_modelling"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card:card_layout_resourceID="@layout/native_material_largeimage_card"
+                style="@style/card_external"
+                />
+
+            <it.gmariotti.cardslib.library.view.CardViewNative
+                android:id="@+id/card_wearables"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card:card_layout_resourceID="@layout/native_material_largeimage_card"
+                style="@style/card_external"
+                />
+
+            <it.gmariotti.cardslib.library.view.CardViewNative
+                android:id="@+id/card_virtual_reality"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 card:card_layout_resourceID="@layout/native_material_largeimage_text_card"

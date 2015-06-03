@@ -37,4 +37,7 @@ dependencies {
     //Core card library
     compile 'com.github.gabrielemariotti.cards:cardslib-core:2.1.0'
     compile 'com.github.gabrielemariotti.cards:cardslib-cards:2.1.0'
+
+    // Volley
+    compile 'com.mcxiaoke.volley:library:1.0.6'
 }

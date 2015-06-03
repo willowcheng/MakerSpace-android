@@ -27,7 +27,7 @@
     android:paddingRight="@dimen/actions_padding_left">
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/textLeft"
         android:text="SHARE"
         android:background="?android:selectableItemBackground"
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
 
 
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/textRight"
         android:text="LEARN MORE"
         android:background="?android:selectableItemBackground"
         android:textColor="@color/deep_carmine_pink"

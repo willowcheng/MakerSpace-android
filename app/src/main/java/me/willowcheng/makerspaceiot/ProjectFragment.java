@@ -3,7 +3,6 @@ package me.willowcheng.makerspaceiot;
 
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +16,6 @@ import com.nineoldandroids.view.ViewHelper;
 import java.util.ArrayList;
 
 import it.gmariotti.cardslib.library.cards.actions.BaseSupplementalAction;
-import it.gmariotti.cardslib.library.cards.actions.IconSupplementalAction;
 import it.gmariotti.cardslib.library.cards.actions.TextSupplementalAction;
 import it.gmariotti.cardslib.library.cards.material.MaterialLargeImageCard;
 import it.gmariotti.cardslib.library.internal.Card;
@@ -46,53 +44,13 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
         mScrollView.setScrollViewCallbacks(this);
         mParallaxImageHeight = getResources().getDimensionPixelSize(R.dimen.parallax_image_height);
 
-        // Set supplemental actions as text
-        ArrayList<BaseSupplementalAction> actions = new ArrayList<BaseSupplementalAction>();
+        setUpCard(rootView, "Internet of Things", R.id.card_iot, R.drawable.banner_iot);
+        setUpCard(rootView, "Mobile", R.id.card_mobile, R.drawable.banner_mobile);
+        setUpCard(rootView, "Biomedical", R.id.card_biomedical, R.drawable.banner_biomedical);
+        setUpCard(rootView, "3D Modelling", R.id.card_3d_modelling, R.drawable.banner_3d_modelling);
+        setUpCard(rootView, "Wearables", R.id.card_wearables, R.drawable.banner_wearables);
+        setUpCard(rootView, "Virtual Reality", "This is my favorite local beach", "A wonderful place", R.id.card_virtual_reality, R.drawable.banner_virtual_reality);
 
-        // Set supplemental actions
-        TextSupplementalAction t1 = new TextSupplementalAction(getActivity(), R.id.text1);
-        t1.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
-            @Override
-            public void onClick(Card card, View view) {
-                Toast.makeText(getActivity()," Click on Text SHARE ",Toast.LENGTH_SHORT).show();
-            }
-        });
-        actions.add(t1);
-
-        TextSupplementalAction t2 = new TextSupplementalAction(getActivity(), R.id.text2);
-        t2.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
-            @Override
-            public void onClick(Card card, View view) {
-                Toast.makeText(getActivity()," Click on Text LEARN ",Toast.LENGTH_SHORT).show();
-            }
-        });
-        actions.add(t2);
-
-        //Create a Card, set the title over the image and set the thumbnail
-        MaterialLargeImageCard card =
-                MaterialLargeImageCard.with(getActivity())
-                        .setTextOverImage("Internet of Things")
-                        .setTitle("This is my favorite local beach")
-                        .setSubTitle("A wonderful place")
-                        .useDrawableId(R.drawable.header_background)
-                        .setupSupplementalActions(R.layout.carddemo_native_material_supplemental_actions_large, actions)
-                        .build();
-
-        card.setOnClickListener(new Card.OnCardClickListener() {
-            @Override
-            public void onClick(Card card, View view) {
-                Toast.makeText(getActivity(), " Click on ActionArea ", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        CardViewNative cardView1 = (CardViewNative) rootView.findViewById(R.id.carddemo_largeimage1);
-        cardView1.setCard(card);
-
-        CardViewNative cardView2 = (CardViewNative) rootView.findViewById(R.id.carddemo_largeimage2);
-        cardView2.setCard(card);
-
-        CardViewNative cardView3 = (CardViewNative) rootView.findViewById(R.id.carddemo_largeimage3);
-        cardView3.setCard(card);
 
         return rootView;
     }
@@ -108,6 +66,92 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
 
     @Override
     public void onUpOrCancelMotionEvent(ScrollState scrollState) {
+    }
+
+    public void setUpCard(View rootView, String overImageText, int cardViewNativeId, int imageDrawerId) {
+        // Set supplemental actions as text
+        ArrayList<BaseSupplementalAction> actions = new ArrayList<>();
+
+        // Set supplemental actions
+        TextSupplementalAction textLeft = new TextSupplementalAction(getActivity(), R.id.textLeft);
+        textLeft.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
+            @Override
+            public void onClick(Card card, View view) {
+                Toast.makeText(getActivity(), " Click on Text SHARE ", Toast.LENGTH_SHORT).show();
+            }
+        });
+        actions.add(textLeft);
+
+        TextSupplementalAction textRight = new TextSupplementalAction(getActivity(), R.id.textRight);
+        textRight.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
+            @Override
+            public void onClick(Card card, View view) {
+                Toast.makeText(getActivity(), " Click on Text LEARN ", Toast.LENGTH_SHORT).show();
+            }
+        });
+        actions.add(textRight);
+
+        //Create a Card, set the title over the image and set the thumbnail
+        MaterialLargeImageCard card =
+                MaterialLargeImageCard.with(getActivity())
+                        .setTextOverImage(overImageText)
+                        .useDrawableId(imageDrawerId)
+                        .setupSupplementalActions(R.layout.card_native_material_supplement_text, actions)
+                        .build();
+
+        card.setOnClickListener(new Card.OnCardClickListener() {
+            @Override
+            public void onClick(Card card, View view) {
+                Toast.makeText(getActivity(), " Click on ActionArea ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        CardViewNative cardView = (CardViewNative) rootView.findViewById(cardViewNativeId);
+        cardView.setCard(card);
+    }
+
+    public void setUpCard(View rootView, String overImageText, String title, String subtitle, int cardViewNativeId, int imageDrawerId) {
+        // Set supplemental actions as text
+        ArrayList<BaseSupplementalAction> actions = new ArrayList<>();
+
+        // Set supplemental actions
+        TextSupplementalAction textLeft = new TextSupplementalAction(getActivity(), R.id.textLeft);
+        textLeft.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
+            @Override
+            public void onClick(Card card, View view) {
+                Toast.makeText(getActivity(), " Click on Text SHARE ", Toast.LENGTH_SHORT).show();
+            }
+        });
+        actions.add(textLeft);
+
+        TextSupplementalAction textRight = new TextSupplementalAction(getActivity(), R.id.textRight);
+        textRight.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
+            @Override
+            public void onClick(Card card, View view) {
+                Toast.makeText(getActivity(), " Click on Text LEARN ", Toast.LENGTH_SHORT).show();
+            }
+        });
+        actions.add(textRight);
+
+        //Create a Card, set the title over the image and set the thumbnail
+        MaterialLargeImageCard card =
+                MaterialLargeImageCard.with(getActivity())
+                        .setTextOverImage(overImageText)
+                        .setTitle(title)
+                        .setSubTitle(subtitle)
+                        .useDrawableId(imageDrawerId)
+                        .setupSupplementalActions(R.layout.card_native_material_supplement_text, actions)
+                        .build();
+
+        card.setOnClickListener(new Card.OnCardClickListener() {
+            @Override
+            public void onClick(Card card, View view) {
+                Toast.makeText(getActivity(), " Click on ActionArea ", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        CardViewNative cardView = (CardViewNative) rootView.findViewById(cardViewNativeId);
+        cardView.setCard(card);
     }
 
 }
