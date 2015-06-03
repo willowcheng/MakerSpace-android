@@ -40,4 +40,7 @@ dependencies {
 
     // Volley
     compile 'com.mcxiaoke.volley:library:1.0.6'
+
+    // Material design dialog
+    compile 'com.afollestad:material-dialogs:0.7.2.8'
 }

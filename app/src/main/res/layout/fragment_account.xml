@@ -12,14 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        app:met_baseColor="@color/sushi"
+        app:met_baseColor="@color/deep_carmine_pink"
         app:met_floatingLabel="highlight" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        app:met_baseColor="@color/sushi"
+        app:met_baseColor="@color/deep_carmine_pink"
         app:met_floatingLabel="highlight" />
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:background="@color/sushi"
+            android:background="@color/deep_carmine_pink"
             android:text="Sign in"
             android:textColor="#FFF" />
 
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:background="@color/sushi"
+            android:background="@color/deep_carmine_pink"
             android:text="Sign up"
             android:textColor="@android:color/white" />
     </LinearLayout>

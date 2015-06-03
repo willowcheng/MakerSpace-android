@@ -24,7 +24,7 @@ public class MainActivity extends MaterialNavigationDrawer {
 
         // create sections
         this.addSection(newSection(getResources().getString(R.string.project_fragment), MrVector.inflate(getResources(), R.drawable.ic_project), new ProjectFragment()).setSectionColor(getResources().getColor(R.color.deep_carmine_pink)));
-        this.addSection(newSection(getResources().getString(R.string.account_fragment), MrVector.inflate(getResources(), R.drawable.ic_account), new AccountFragment()).setSectionColor(getResources().getColor(R.color.sushi)));
+        this.addSection(newSection(getResources().getString(R.string.account_fragment), MrVector.inflate(getResources(), R.drawable.ic_account), new AccountFragment()).setSectionColor(getResources().getColor(R.color.deep_carmine_pink)));
 
         disableLearningPattern();
     }
