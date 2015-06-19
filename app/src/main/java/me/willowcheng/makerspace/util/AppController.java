@@ -1,4 +1,4 @@
-package me.willowcheng.makerspaceiot.util;
+package me.willowcheng.makerspace.util;
 
 import android.app.Application;
 import android.text.TextUtils;

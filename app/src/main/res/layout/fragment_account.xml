@@ -1,52 +1,60 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
-    android:orientation="vertical"
-    tools:context="me.willowcheng.makerspaceiot.AccountFragment">
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        app:met_baseColor="@color/deep_carmine_pink"
-        app:met_floatingLabel="highlight" />
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        app:met_baseColor="@color/deep_carmine_pink"
-        app:met_floatingLabel="highlight" />
+    tools:context="me.willowcheng.makerspace.AccountFragment">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
 
-        <Button
-            android:id="@+id/sign_in"
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            app:met_baseColor="@color/deep_carmine_pink"
+            app:met_floatingLabel="highlight" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            app:met_baseColor="@color/deep_carmine_pink"
+            app:met_floatingLabel="highlight" />
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:background="@color/deep_carmine_pink"
-            android:text="Sign in"
-            android:textColor="#FFF" />
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/sign_up"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:background="@color/deep_carmine_pink"
-            android:text="Sign up"
-            android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:background="@color/deep_carmine_pink"
+                android:text="Sign in"
+                android:textColor="#FFF" />
+
+            <Button
+                android:id="@+id/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:background="@color/deep_carmine_pink"
+                android:text="Sign up"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

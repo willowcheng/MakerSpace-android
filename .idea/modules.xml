@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MakerSpaceIoT.iml" filepath="$PROJECT_DIR$/MakerSpaceIoT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MakerSpace.iml" filepath="$PROJECT_DIR$/MakerSpace.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

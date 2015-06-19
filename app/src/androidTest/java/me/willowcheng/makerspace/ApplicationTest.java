@@ -1,4 +1,4 @@
-package me.willowcheng.makerspaceiot;
+package me.willowcheng.makerspace;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

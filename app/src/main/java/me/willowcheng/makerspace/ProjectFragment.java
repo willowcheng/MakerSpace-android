@@ -1,4 +1,4 @@
-package me.willowcheng.makerspaceiot;
+package me.willowcheng.makerspace;
 
 
 import android.os.Bundle;
@@ -38,18 +38,18 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_project, container, false);
-        mTextView = rootView.findViewById(R.id.logo);
-        mScrollView = (ObservableScrollView) rootView.findViewById(R.id.scroll);
+        View rootView = inflater.inflate(me.willowcheng.makerspace.R.layout.fragment_project, container, false);
+        mTextView = rootView.findViewById(me.willowcheng.makerspace.R.id.logo);
+        mScrollView = (ObservableScrollView) rootView.findViewById(me.willowcheng.makerspace.R.id.scroll);
         mScrollView.setScrollViewCallbacks(this);
-        mParallaxImageHeight = getResources().getDimensionPixelSize(R.dimen.parallax_image_height);
+        mParallaxImageHeight = getResources().getDimensionPixelSize(me.willowcheng.makerspace.R.dimen.parallax_image_height);
 
-        setUpCard(rootView, "Internet of Things", R.id.card_iot, R.drawable.banner_iot);
-        setUpCard(rootView, "Mobile", R.id.card_mobile, R.drawable.banner_mobile);
-        setUpCard(rootView, "Biomedical", R.id.card_biomedical, R.drawable.banner_biomedical);
-        setUpCard(rootView, "3D Modelling", R.id.card_3d_modelling, R.drawable.banner_3d_modelling);
-        setUpCard(rootView, "Wearables", R.id.card_wearables, R.drawable.banner_wearables);
-        setUpCard(rootView, "Virtual Reality", "This is my favorite local beach", "A wonderful place", R.id.card_virtual_reality, R.drawable.banner_virtual_reality);
+        setUpCard(rootView, "Internet of Things", me.willowcheng.makerspace.R.id.card_iot, me.willowcheng.makerspace.R.drawable.banner_iot);
+        setUpCard(rootView, "Mobile", me.willowcheng.makerspace.R.id.card_mobile, me.willowcheng.makerspace.R.drawable.banner_mobile);
+        setUpCard(rootView, "Biomedical", me.willowcheng.makerspace.R.id.card_biomedical, me.willowcheng.makerspace.R.drawable.banner_biomedical);
+        setUpCard(rootView, "3D Modelling", me.willowcheng.makerspace.R.id.card_3d_modelling, me.willowcheng.makerspace.R.drawable.banner_3d_modelling);
+        setUpCard(rootView, "Wearables", me.willowcheng.makerspace.R.id.card_wearables, me.willowcheng.makerspace.R.drawable.banner_wearables);
+        setUpCard(rootView, "Virtual Reality", "This is my favorite local beach", "A wonderful place", me.willowcheng.makerspace.R.id.card_virtual_reality, me.willowcheng.makerspace.R.drawable.banner_virtual_reality);
 
 
         return rootView;
@@ -73,7 +73,7 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
         ArrayList<BaseSupplementalAction> actions = new ArrayList<>();
 
         // Set supplemental actions
-        TextSupplementalAction textLeft = new TextSupplementalAction(getActivity(), R.id.textLeft);
+        TextSupplementalAction textLeft = new TextSupplementalAction(getActivity(), me.willowcheng.makerspace.R.id.textLeft);
         textLeft.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
             @Override
             public void onClick(Card card, View view) {
@@ -82,7 +82,7 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
         });
         actions.add(textLeft);
 
-        TextSupplementalAction textRight = new TextSupplementalAction(getActivity(), R.id.textRight);
+        TextSupplementalAction textRight = new TextSupplementalAction(getActivity(), me.willowcheng.makerspace.R.id.textRight);
         textRight.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
             @Override
             public void onClick(Card card, View view) {
@@ -96,7 +96,7 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
                 MaterialLargeImageCard.with(getActivity())
                         .setTextOverImage(overImageText)
                         .useDrawableId(imageDrawerId)
-                        .setupSupplementalActions(R.layout.card_native_material_supplement_text, actions)
+                        .setupSupplementalActions(me.willowcheng.makerspace.R.layout.card_native_material_supplement_text, actions)
                         .build();
 
         card.setOnClickListener(new Card.OnCardClickListener() {
@@ -115,7 +115,7 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
         ArrayList<BaseSupplementalAction> actions = new ArrayList<>();
 
         // Set supplemental actions
-        TextSupplementalAction textLeft = new TextSupplementalAction(getActivity(), R.id.textLeft);
+        TextSupplementalAction textLeft = new TextSupplementalAction(getActivity(), me.willowcheng.makerspace.R.id.textLeft);
         textLeft.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
             @Override
             public void onClick(Card card, View view) {
@@ -124,7 +124,7 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
         });
         actions.add(textLeft);
 
-        TextSupplementalAction textRight = new TextSupplementalAction(getActivity(), R.id.textRight);
+        TextSupplementalAction textRight = new TextSupplementalAction(getActivity(), me.willowcheng.makerspace.R.id.textRight);
         textRight.setOnActionClickListener(new BaseSupplementalAction.OnActionClickListener() {
             @Override
             public void onClick(Card card, View view) {
@@ -140,7 +140,7 @@ public class ProjectFragment extends Fragment implements ObservableScrollViewCal
                         .setTitle(title)
                         .setSubTitle(subtitle)
                         .useDrawableId(imageDrawerId)
-                        .setupSupplementalActions(R.layout.card_native_material_supplement_text, actions)
+                        .setupSupplementalActions(me.willowcheng.makerspace.R.layout.card_native_material_supplement_text, actions)
                         .build();
 
         card.setOnClickListener(new Card.OnCardClickListener() {

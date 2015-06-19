@@ -1,4 +1,4 @@
-package me.willowcheng.makerspaceiot;
+package me.willowcheng.makerspace;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,13 +18,13 @@ public class MainActivity extends MaterialNavigationDrawer {
     public void init(Bundle savedInstanceState) {
 
         // add accounts
-        account = new MaterialAccount(this.getResources(), "", "", null, R.drawable.drawer_background);
+        account = new MaterialAccount(this.getResources(), "", "", null, me.willowcheng.makerspace.R.drawable.drawer_background);
         this.addAccount(account);
 
 
         // create sections
-        this.addSection(newSection(getResources().getString(R.string.project_fragment), MrVector.inflate(getResources(), R.drawable.ic_project), new ProjectFragment()).setSectionColor(getResources().getColor(R.color.deep_carmine_pink)));
-        this.addSection(newSection(getResources().getString(R.string.account_fragment), MrVector.inflate(getResources(), R.drawable.ic_account), new AccountFragment()).setSectionColor(getResources().getColor(R.color.deep_carmine_pink)));
+        this.addSection(newSection(getResources().getString(me.willowcheng.makerspace.R.string.project_fragment), MrVector.inflate(getResources(), me.willowcheng.makerspace.R.drawable.ic_project), new ProjectFragment()).setSectionColor(getResources().getColor(me.willowcheng.makerspace.R.color.deep_carmine_pink)));
+        this.addSection(newSection(getResources().getString(me.willowcheng.makerspace.R.string.account_fragment), MrVector.inflate(getResources(), me.willowcheng.makerspace.R.drawable.ic_account), new AccountFragment()).setSectionColor(getResources().getColor(me.willowcheng.makerspace.R.color.deep_carmine_pink)));
 
         disableLearningPattern();
     }
@@ -33,7 +33,7 @@ public class MainActivity extends MaterialNavigationDrawer {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(me.willowcheng.makerspace.R.menu.menu_main, menu);
         return true;
     }
 
@@ -45,7 +45,7 @@ public class MainActivity extends MaterialNavigationDrawer {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == me.willowcheng.makerspace.R.id.action_settings) {
             return true;
         }
 

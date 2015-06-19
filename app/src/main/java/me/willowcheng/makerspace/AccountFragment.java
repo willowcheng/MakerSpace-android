@@ -1,4 +1,4 @@
-package me.willowcheng.makerspaceiot;
+package me.willowcheng.makerspace;
 
 
 import android.os.Bundle;
@@ -25,8 +25,8 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
-        Button signUpButton = (Button) rootView.findViewById(R.id.sign_up);
+        View rootView = inflater.inflate(me.willowcheng.makerspace.R.layout.fragment_account, container, false);
+        Button signUpButton = (Button) rootView.findViewById(me.willowcheng.makerspace.R.id.sign_up);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

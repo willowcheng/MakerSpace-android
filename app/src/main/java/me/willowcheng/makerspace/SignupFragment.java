@@ -1,4 +1,4 @@
-package me.willowcheng.makerspaceiot;
+package me.willowcheng.makerspace;
 
 
 import android.app.Fragment;
@@ -16,6 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.github.mrengineer13.snackbar.SnackBar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,7 +24,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import me.willowcheng.makerspaceiot.util.AppController;
+import me.willowcheng.makerspace.util.AppController;
 
 
 /**
@@ -43,19 +44,19 @@ public class SignupFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_signup, container, false);
-        Button mSignUpButton = (Button) rootView.findViewById(R.id.button_sign_up);
-        final TextView mFirstNameText = (TextView) rootView.findViewById(R.id.text_first_name);
-        final TextView mLastNameText = (TextView) rootView.findViewById(R.id.text_last_name);
-        final TextView mEmailText = (TextView) rootView.findViewById(R.id.text_email);
-        final TextView mUsernameText = (TextView) rootView.findViewById(R.id.text_username);
-        final TextView mPasswordText = (TextView) rootView.findViewById(R.id.text_password);
-        final TextView mConfirmaionPasswordText = (TextView) rootView.findViewById(R.id.text_confirm_password);
+        View rootView = inflater.inflate(me.willowcheng.makerspace.R.layout.fragment_signup, container, false);
+        Button mSignUpButton = (Button) rootView.findViewById(me.willowcheng.makerspace.R.id.button_sign_up);
+        final TextView mFirstNameText = (TextView) rootView.findViewById(me.willowcheng.makerspace.R.id.text_first_name);
+        final TextView mLastNameText = (TextView) rootView.findViewById(me.willowcheng.makerspace.R.id.text_last_name);
+        final TextView mEmailText = (TextView) rootView.findViewById(me.willowcheng.makerspace.R.id.text_email);
+        final TextView mUsernameText = (TextView) rootView.findViewById(me.willowcheng.makerspace.R.id.text_username);
+        final TextView mPasswordText = (TextView) rootView.findViewById(me.willowcheng.makerspace.R.id.text_password);
+        final TextView mConfirmaionPasswordText = (TextView) rootView.findViewById(me.willowcheng.makerspace.R.id.text_confirm_password);
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final MaterialDialog pDialog = new MaterialDialog.Builder(getActivity())
-                        .content(R.string.loading)
+                        .content(me.willowcheng.makerspace.R.string.loading)
                         .progress(true, 0)
                         .show();
                 try {
@@ -71,8 +72,19 @@ public class SignupFragment extends Fragment {
                     CustomJsonObjectRequest signReq = new CustomJsonObjectRequest(Request.Method.POST, SIGNUP_URL, jsonRequest, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
-                            Log.i(TAG, response.toString());
+                            try {
+                                Log.i(TAG, response.getString("success"));
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                            new SnackBar.Builder(getActivity())
+                                    .withMessage(mUsernameText.getText().toString() + ", " + "Register successful!")
+                                    .withDuration(SnackBar.SHORT_SNACK)
+                                    .show();
                             pDialog.dismiss();
+
+                            getActivity().onBackPressed();
                         }
 
                     }, new Response.ErrorListener() {
@@ -80,20 +92,7 @@ public class SignupFragment extends Fragment {
                         public void onErrorResponse(VolleyError error) {
                             pDialog.dismiss();
                             Log.i(TAG, "Failed");
-//                            pDialog.hide();
-//                            switch (error.networkResponse.statusCode) {
-//                                case 403:
-//                                    new SnackBar.Builder(getActivity())
-//                                            .withMessage("网络出现403错误，请重试")
-//                                            .withDuration(SnackBar.SHORT_SNACK)
-//                                            .show();
-//                                    break;
-//                                default:
-//                                    new SnackBar.Builder(getActivity())
-//                                            .withMessage("网络出错，请重试")
-//                                            .withDuration(SnackBar.SHORT_SNACK)
-//                                            .show();
-//                            }
+                            Log.i(TAG, error.networkResponse.toString());
                         }
                     });
                     AppController.getInstance().addToRequestQueue(signReq);

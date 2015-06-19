@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,77 +7,83 @@
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_marginTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="me.willowcheng.makerspaceiot.SignupFragment">
+    tools:context="me.willowcheng.makerspace.SignupFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
 
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/text_first_name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_weight="1"
-            android:hint="First Name"
-            app:met_baseColor="@color/deep_carmine_pink" />
+            android:orientation="horizontal">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/text_first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_weight="1"
+                android:hint="First Name"
+                app:met_baseColor="@color/deep_carmine_pink" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/text_last_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Last Name"
+                app:met_baseColor="@color/deep_carmine_pink" />
+        </LinearLayout>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/text_last_name"
+            android:id="@+id/text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Last Name"
-            app:met_baseColor="@color/deep_carmine_pink" />
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            app:met_baseColor="@color/deep_carmine_pink"
+            app:met_floatingLabel="highlight" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/text_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            app:met_baseColor="@color/deep_carmine_pink"
+            app:met_floatingLabel="normal" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/text_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            app:met_baseColor="@color/deep_carmine_pink"
+            app:met_floatingLabel="highlight"
+            app:met_helperText="At least one uppercase letter, one lowercase letter, one number and one special character"
+            app:met_minCharacters="8" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/text_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            app:met_baseColor="@color/deep_carmine_pink"
+            app:met_minCharacters="8" />
+
+        <Button
+            android:id="@+id/button_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:background="@color/deep_carmine_pink"
+            android:text="Sign up"
+            android:textColor="@android:color/white" />
     </LinearLayout>
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/text_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Email"
-        app:met_baseColor="@color/deep_carmine_pink"
-        app:met_floatingLabel="highlight" />
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/text_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"
-        app:met_baseColor="@color/deep_carmine_pink"
-        app:met_floatingLabel="normal" />
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/text_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:met_baseColor="@color/deep_carmine_pink"
-        app:met_floatingLabel="highlight"
-        app:met_helperText="At least one uppercase letter, one lowercase letter, one number and one special character"
-        app:met_minCharacters="8" />
-
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/text_confirm_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Confirm Password"
-        android:inputType="textPassword"
-        app:met_baseColor="@color/deep_carmine_pink"
-        app:met_minCharacters="8" />
-
-    <Button
-        android:id="@+id/button_sign_up"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:background="@color/deep_carmine_pink"
-        android:text="Sign up"
-        android:textColor="@android:color/white" />
-
-</LinearLayout>
+</RelativeLayout>
