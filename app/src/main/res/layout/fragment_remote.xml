@@ -1,9 +1,351 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="me.willowcheng.makerspace.RemoteFragment">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="me.willowcheng.makerspace.RemoteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCENARIOS"
+        android:textSize="@dimen/abc_text_size_medium_material" />
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_makerspace" />
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@android:id/icon"
+            android:singleLine="true"
+            android:text="Makerspace"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@android:id/title"
+            android:layout_alignStart="@android:id/title"
+            android:layout_below="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@android:id/icon"
+            android:maxLines="4"
+            android:text="Workshop Room"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp" />
+
+        <com.rey.material.widget.Spinner
+            android:id="@+id/spinner_makerspace"
+            style="@style/Material.Widget.Spinner.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:rd_enable="true"
+            app:rd_delayClick="none"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+            app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+            app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_arise_lab" />
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@android:id/icon"
+            android:singleLine="true"
+            android:text="Arise Lab"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@android:id/title"
+            android:layout_alignStart="@android:id/title"
+            android:layout_below="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@android:id/icon"
+            android:maxLines="4"
+            android:text="Development Room"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp" />
+
+        <com.rey.material.widget.Spinner
+            android:id="@+id/spinner_arise"
+            style="@style/Material.Widget.Spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:rd_style="@style/Material.Drawable.Ripple.Wave" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fire_engine_red" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="CONTROL"
+        android:textSize="@dimen/abc_text_size_medium_material" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_light" />
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@android:id/icon"
+            android:singleLine="true"
+            android:text="Front Light"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@android:id/title"
+            android:layout_alignStart="@android:id/title"
+            android:layout_below="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@android:id/icon"
+            android:maxLines="4"
+            android:text="Arise Lab"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp" />
+
+        <com.rey.material.widget.Switch
+            style="@style/Material.Widget.Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:checked="false"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_light" />
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@android:id/icon"
+            android:singleLine="true"
+            android:text="Central Light"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@android:id/title"
+            android:layout_alignStart="@android:id/title"
+            android:layout_below="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@android:id/icon"
+            android:maxLines="4"
+            android:text="Arise Lab"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp" />
+
+        <com.rey.material.widget.Slider
+            style="@style/Material.Widget.Slider"
+            android:layout_width="160dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:sl_maxValue="100"
+            app:sl_minValue="0"
+            app:sl_value="50" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_timer" />
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@android:id/icon"
+            android:singleLine="true"
+            android:text="Timer"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@android:id/title"
+            android:layout_alignStart="@android:id/title"
+            android:layout_below="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@android:id/icon"
+            android:maxLines="4"
+            android:text="Arise Lab"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp" />
+
+        <com.rey.material.widget.Button
+            style="@style/Material.Drawable.Ripple.Touch.MatchView.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/button_timer"
+            android:text="SET"
+            app:rd_enable="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_color_led" />
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@android:id/icon"
+            android:singleLine="true"
+            android:text="Romantic LED"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@android:id/title"
+            android:layout_alignStart="@android:id/title"
+            android:layout_below="@android:id/title"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@android:id/icon"
+            android:maxLines="4"
+            android:text="Arise Lab"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="14sp" />
+
+        <com.rey.material.widget.Button
+            android:id="@+id/button_color_select"
+            style="@style/Material.Drawable.Ripple.Touch.MatchView.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Color"
+            app:rd_enable="true" />
+    </RelativeLayout>
+
+</LinearLayout>
